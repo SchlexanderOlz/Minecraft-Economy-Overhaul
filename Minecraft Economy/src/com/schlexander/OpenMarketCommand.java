@@ -1,0 +1,17 @@
+package com.schlexander;
+
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class OpenMarketCommand implements CommandExecutor {
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String [] args) {
+        Player player = (Player) sender;
+        player.openInventory(Market.free_market);
+        Market.LoadOverview();
+        return true;
+    }
+}
